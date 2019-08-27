@@ -108,46 +108,39 @@ class Srnet(nn.Module):
 		# Layer 1
 		conv = self.layer1(inputs)
 		actv = F.relu(self.bn1(conv))
-		# print("L1:", actv.shape)
 		# Layer 2
 		conv = self.layer2(actv)
 		actv = F.relu(self.bn2(conv))
-		# print("L2:", actv.shape)
 		# Layer 3
 		conv1 = self.layer31(actv)
 		actv1 = F.relu(self.bn31(conv1))
 		conv2 = self.layer32(actv1)
 		bn = self.bn32(conv2)
 		res = torch.add(actv, bn)
-		# print("L3:",res.shape)
 		# Layer 4
 		conv1 = self.layer41(res)
 		actv1 = F.relu(self.bn41(conv1))
 		conv2 = self.layer42(actv1)
 		bn = self.bn42(conv2)
 		res = torch.add(res, bn)
-		# print("L4:",res.shape)
 		# Layer 5
 		conv1 = self.layer51(res)
 		actv1 = F.relu(self.bn51(conv1))
 		conv2 = self.layer52(actv1)
 		bn = self.bn52(conv2)
 		res = torch.add(res, bn)
-		# print("L5:",res.shape)
 		# Layer 6
 		conv1 = self.layer61(res)
 		actv1 = F.relu(self.bn61(conv1))
 		conv2 = self.layer62(actv1)
 		bn = self.bn62(conv2)
 		res = torch.add(res, bn)
-		# print("L6:",res.shape)
 		# Layer 7
 		conv1 = self.layer71(res)
 		actv1 = F.relu(self.bn71(conv1))
 		conv2 = self.layer72(actv1)
 		bn = self.bn72(conv2)
 		res = torch.add(res, bn)
-		# print("L7:",res.shape)
 		# Layer 8
 		convs = self.layer81(res)
 		convs = self.bn81(convs)
@@ -157,7 +150,6 @@ class Srnet(nn.Module):
 		bn = self.bn83(conv2)
 		pool = self.pool1(bn)
 		res = torch.add(convs, pool)
-		# print("L8:",res.shape)
 		# Layer 9
 		convs = self.layer91(res)
 		convs = self.bn91(convs)
@@ -167,7 +159,6 @@ class Srnet(nn.Module):
 		bn = self.bn93(conv2)
 		pool = self.pool2(bn)
 		res = torch.add(convs, pool)
-		# print("L9:",res.shape)
 		# Layer 10
 		convs = self.layer101(res)
 		convs = self.bn101(convs)
@@ -177,7 +168,6 @@ class Srnet(nn.Module):
 		bn = self.bn103(conv2)
 		pool = self.pool1(bn)
 		res = torch.add(convs, pool)
-		# print("L10:",res.shape)
 		# Layer 11
 		convs = self.layer111(res)
 		convs = self.bn111(convs)
@@ -187,7 +177,6 @@ class Srnet(nn.Module):
 		bn = self.bn113(conv2)
 		pool = self.pool1(bn)
 		res = torch.add(convs, pool)
-		# print("L11:",res.shape)
 		# Layer 12
 		conv1 = self.layer121(res)
 		actv1 = F.relu(self.bn121(conv1))
@@ -195,7 +184,6 @@ class Srnet(nn.Module):
 		bn = self.bn122(conv2)
 		# print("L12:",res.shape)
 		avgp = torch.mean(bn, dim=(2,3), keepdim=True)
-		# print("L_avgp:",res.shape)
 		# fully connected
 		flatten = avgp.view(avgp.size(0),-1)
 		# print("flatten:", flatten.shape)
