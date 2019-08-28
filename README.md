@@ -6,3 +6,9 @@ The model weight is trained on the S-Uniward 0.4bpp in the same setting as repor
 The model can be tested using the file test.py
 The tensorflow code of the same can be found at: http://dde.binghamton.edu/download/feature_extractors/
 
+Graph of training, validation and testing accuracies is also given for reference.
+
+The model is trained and tested on DGX-1 with 32GB GPU.
+
+I acknowledge the Department of Biotechnology, Govt. of India for the financial support for the project BT/COE/34/SP28408/2018.
+
