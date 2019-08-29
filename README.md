@@ -8,7 +8,7 @@ The tensorflow code of the same can be found at: http://dde.binghamton.edu/downl
 
 Graph of training, validation and testing accuracies is also given for reference.
 
-The model is trained and tested on DGX-1 with 32GB GPU.
+The model is trained and tested on Tesla V-100-DGX with 32GB GPU.
 
 I acknowledge the Department of Biotechnology, Govt. of India for the financial support for the project BT/COE/34/SP28408/2018.
 
