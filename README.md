@@ -6,7 +6,7 @@ The model is trained on the S-Uniward 0.4bpp in the same setting as reported in 
 The model can be tested using the file test.py
 The tensorflow code of the same can be found at: http://dde.binghamton.edu/download/feature_extractors/
 
-The test accuracy reported in the paper is **89.77%**. My implementation achieved **89.37**.
+The test accuracy reported in the paper is **89.77%**. My implementation achieved **89.43%**.
 
 The model is trained and tested on Tesla V-100-DGX with 32GB GPU.
 
