@@ -19,6 +19,6 @@ I acknowledge the Department of Biotechnology, Govt. of India for the financial 
   </tr>
   <tr>
     <td valign="top"><img src="srnet.png"></td>
-    <td valign="top"><img src="train_val_acc.png"></td>
+    <td valign="top"><img src="train_valid_acc.png"></td>
   </tr>
  </table>
