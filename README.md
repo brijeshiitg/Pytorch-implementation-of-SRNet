@@ -12,3 +12,13 @@ The model is trained and tested on Tesla V-100-DGX with 32GB GPU.
 
 I acknowledge the Department of Biotechnology, Govt. of India for the financial support for the project BT/COE/34/SP28408/2018.
 
+<table>
+  <tr>
+    <td align="center">SRNet architecture</td>
+     <td align="center">Train/Validation/Test Accuracies</td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="srnet.png"></td>
+    <td valign="top"><img src="train_val_acc.png"></td>
+  </tr>
+ </table>
