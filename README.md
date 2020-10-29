@@ -10,8 +10,6 @@ The test accuracy reported in the paper is **89.77%**. My implementation achieve
 
 The model is trained and tested on Tesla V-100-DGX with 32GB GPU.
 
-I acknowledge the Department of Biotechnology, Govt. of India for the financial support for the project BT/COE/34/SP28408/2018.
-
 <table>
   <tr>
     <td align="center">SRNet architecture</td>
