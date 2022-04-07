@@ -8,7 +8,7 @@ from model import Srnet
 TEST_BATCH_SIZE = 40
 COVER_PATH = '/path/to/cover/images/'
 STEGO_PATH = '/path/to/stego/images/'
-CHKPT='SRNet_model_weights.pt'
+CHKPT ='./checkpoints/SRNet_model_weights.pt'
 
 cover_image_names = glob(COVER_PATH)
 stego_image_names = glob(STEGO_PATH)
