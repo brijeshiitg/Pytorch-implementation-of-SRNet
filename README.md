@@ -21,4 +21,7 @@ The model is trained and tested on Tesla V-100-DGX with 32GB GPU.
   </tr>
  </table>
 
- ### Update: all the files used for training has been updated
+ ### Datasets:
+ You can find cover images here: [BOSSbase_1.01.zip](https://dde.binghamton.edu/download/ImageDB/BOSSbase_1.01.zip)
+and steganography algorithms here: [SUniward](https://dde.binghamton.edu/download/stego_algorithms/download/S-UNIWARD_linux_make_v10.tar.gz), [WOW](https://dde.binghamton.edu/download/stego_algorithms/download/WOW_linux_make_v10.tar.gz), and [MiPOD](https://dde.binghamton.edu/download/stego_algorithms/download/MiPOD_matlab.zip).
+Create corresponding stego images for each cover image with steganography algorithm of your choice. Make sure to change random seed for each image to get random key dataset.
