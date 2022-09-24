@@ -1,8 +1,6 @@
 # Deep Residual Network for Steganalysis of Digital Images (SRNet model) Pytorch Implementation:
 
-Model pretrained weights are in *checkpoints* directory
-The model is trained on the S-Uniward 0.4bpp in the same setting as reported in the paper:
-"Deep Residual Network for Steganalysis of Digital Images"
+This is an unofficial implementation of paper: "Deep Residual Network for Steganalysis of Digital Images"
 The model can be tested using the file test.py
 The tensorflow code of the same can be found at: http://dde.binghamton.edu/download/feature_extractors/
 
