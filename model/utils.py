@@ -24,7 +24,7 @@ class ConvBn(nn.Module):
         )
         self.batch_norm = nn.BatchNorm2d(out_channels)
 
-    def forward(self, inp):
+    def forward(self, inp: Tensor) -> Tensor:
         """Returns Conv2d followed by BatchNorm.
 
         Returns:
@@ -36,7 +36,7 @@ class ConvBn(nn.Module):
 class Type1(nn.Module):
     """Creates type 1 layer of SRNet."""
 
-    def __init__(self, in_channels, out_channels) -> None:
+    def __init__(self, in_channels: int, out_channels: int) -> None:
         super().__init__()
         self.convbn = ConvBn(in_channels, out_channels)
         self.relu = nn.ReLU()
