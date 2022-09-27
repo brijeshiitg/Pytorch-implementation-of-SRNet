@@ -1,12 +1,13 @@
 """This module provide building blocks for SRNet."""
 
 from torch import nn
+from torch import Tensor
 
 
 class ConvBn(nn.Module):
     """Provides utility to create different types of layers."""
 
-    def __init__(self, in_channels, out_channels) -> None:
+    def __init__(self, in_channels: int, out_channels: int) -> None:
         """Constructor.
         Args:
             in_channels (int): no. of input channels.
@@ -40,7 +41,7 @@ class Type1(nn.Module):
         self.convbn = ConvBn(in_channels, out_channels)
         self.relu = nn.ReLU()
 
-    def forward(self, inp):
+    def forward(self, inp: Tensor) -> Tensor:
         """Returns type 1 layer of SRNet.
         Args:
             inp (Tensor): input tensor.
@@ -53,12 +54,12 @@ class Type1(nn.Module):
 class Type2(nn.Module):
     """Creates type 2 layer of SRNet."""
 
-    def __init__(self, in_channels, out_channels) -> None:
+    def __init__(self, in_channels: int, out_channels: int) -> None:
         super().__init__()
         self.type1 = Type1(in_channels, out_channels)
         self.convbn = ConvBn(in_channels, out_channels)
 
-    def forward(self, inp):
+    def forward(self, inp: Tensor) -> Tensor:
         """Returns type 2 layer of SRNet.
         Args:
             inp (Tensor): input tensor.
@@ -71,7 +72,7 @@ class Type2(nn.Module):
 class Type3(nn.Module):
     """Creates type 3 layer of SRNet."""
 
-    def __init__(self, in_channels, out_channels) -> None:
+    def __init__(self, in_channels: int, out_channels: int) -> None:
         super().__init__()
         self.conv1 = nn.Conv2d(
             in_channels,
@@ -86,7 +87,7 @@ class Type3(nn.Module):
         self.convbn = ConvBn(out_channels, out_channels)
         self.pool = nn.AvgPool2d(kernel_size=3, stride=2, padding=1)
 
-    def forward(self, inp):
+    def forward(self, inp: Tensor) -> Tensor:
         """Returns type 3 layer of SRNet.
         Args:
             inp (Tensor): input tensor.
@@ -102,13 +103,13 @@ class Type3(nn.Module):
 class Type4(nn.Module):
     """Creates type 4 layer of SRNet."""
 
-    def __init__(self, in_channels, out_channels) -> None:
+    def __init__(self, in_channels: int, out_channels: int) -> None:
         super().__init__()
         self.type1 = Type1(in_channels, out_channels)
         self.convbn = ConvBn(out_channels, out_channels)
         self.gap = nn.AdaptiveAvgPool2d(output_size=1)
 
-    def forward(self, inp):
+    def forward(self, inp: Tensor) -> Tensor:
         """Returns type 4 layer of SRNet.
         Args:
             inp (Tensor): input tensor.

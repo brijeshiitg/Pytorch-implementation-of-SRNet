@@ -1,5 +1,6 @@
 """ This module creates SRNet model."""
 import torch
+from torch import Tensor
 from torch import nn
 from model.utils import Type1, Type2, Type3, Type4
 
@@ -7,7 +8,7 @@ from model.utils import Type1, Type2, Type3, Type4
 class Srnet(nn.Module):
     """This is SRNet model class."""
 
-    def __init__(self):
+    def __init__(self) -> None:
         """Constructor."""
         super().__init__()
         self.type1s = nn.Sequential(Type1(1, 64), Type1(64, 16))
@@ -28,7 +29,7 @@ class Srnet(nn.Module):
         self.dense = nn.Linear(512, 2)
         self.softmax = nn.LogSoftmax(dim=1)
 
-    def forward(self, inp):
+    def forward(self, inp: Tensor) -> Tensor:
         """Returns logits for input images.
         Args:
             inp (Tensor): input image tensor of shape (Batch, 1, 256, 256)
